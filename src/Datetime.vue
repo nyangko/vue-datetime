@@ -209,7 +209,11 @@ export default {
       this.$emit('input', datetime ? datetime.toISO() : '')
     },
     open (event) {
-      event.target.blur()
+      try {
+        event.target.blur()
+      } catch(_e) {
+        //
+      }
 
       this.isOpen = true
     },
